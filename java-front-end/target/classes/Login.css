@@ -1,0 +1,31 @@
+.root {
+    -fx-padding: 30px;
+}
+
+#title {
+    -fx-padding: 10px;
+    -fx-font-size: 40px;
+    -fx-text-fill: red;
+}
+
+/*.text {*/
+    /*-fx-font-size: 30px;*/
+/*}*/
+
+.label {
+    -fx-font-size: 16px;
+}
+
+.text-field {
+    -fx-font-size: 16px;
+}
+
+#messageLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: red;
+}
+
+.error {
+    -fx-text-fill: red;
+
+}

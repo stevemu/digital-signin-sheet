@@ -1,0 +1,41 @@
+finish uml, test plan and pseduo code for the sign in app
+
+
+
+Pseudocode:
+
+Java FX side:
+
+show admin log in window
+show guest sign in sheet window
+
+when Finish Sign In button is pressed
+	send the data to backend at http://localhost:3001
+
+
+React side:
+
+Seeing sign in records:
+
+at http://localhost:3000/ show admin log in
+after login, show the sign in records for the admin
+
+Admin registration
+
+at http://localhost:3000 show registration form
+	show username and password field
+	
+register with username and password
+when click Register, send data to http://localhost:3001
+	if success, show Registratipon succeeed!
+	if fail, show Error
+
+
+
+Test Plan
+
+Happy Path:
+
+register a user with username a password a
+can log in at admin log in window
+
