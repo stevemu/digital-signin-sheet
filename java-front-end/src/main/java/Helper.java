@@ -7,7 +7,7 @@ import models.Record;
 
 public class Helper {
 //    static String base = "https://online-sign-in-sheet.herokuapp.com";
-    static String base = "http://localhost:3001";
+    static String base = "https://online-sign-in-sheet.stevemu.com";
 
 
     static void postRecordToBackend(Record record) throws Exception {
@@ -17,7 +17,7 @@ public class Helper {
                 .body(record)
                 .asJson();
 
-//        System.out.println(jsonResponse.getBody().getObject().getString("name"));
+        System.out.println(jsonResponse.getStatus());
 //        models.Record back = jsonResponse.getBody();
 //        System.out.println(back.name);
 
@@ -25,8 +25,8 @@ public class Helper {
 
     static boolean login(String org, String password) throws Exception {
 
-        String base = "http://localhost:3001";
-//        String base = "https://online-sign-in-sheet.herokuapp.com";
+//        String base = "http://localhost:3001";
+//        String base = "https://online-sign-in-sheet.stevemu.com";
 
         Login login = new Login();
         login.username = org;
