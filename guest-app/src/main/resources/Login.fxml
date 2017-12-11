@@ -1,0 +1,25 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<GridPane fx:controller="LoginController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" styleClass="root">
+
+<Text id="title" text="Admin Login" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+<Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+<TextField fx:id="idField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+<Label text="Password: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+<PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+<HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4" >
+    <Button fx:id="submitButton" text="Sign in" onAction="#handleSubmitButtonAction" />
+</HBox>
+
+<Label fx:id="messageLabel" GridPane.columnIndex="0" GridPane.columnSpan="2"
+       GridPane.halignment="RIGHT" GridPane.rowIndex="6"
+/>
+
+<stylesheets>
+    <URL value="@Login.css" />
+</stylesheets>
+</GridPane>

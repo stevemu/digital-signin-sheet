@@ -1,0 +1,44 @@
+Test Plan
+
+
+Java FX side:
+========
+
+
+
+At Log in:
+
+* enter 123 and 12345, works
+* not enter anything, error message is shown
+
+
+at guest sign-in sheet:
+
+* without token, and click on Finish Signing In, show Error: Unauthorized
+* if name, email or phone is empty, show red error message
+* enter name, email and phone, click on Finish Signing In, 
+	the success message is shown for 2 seconds
+	record show up in the database
+	record show up in /records/:username
+
+
+
+React side web app:
+=========
+
+At / 
+* redirect to /login
+
+At /login:
+* enter 123 and 12345, works
+* enter a and b, show error messages
+* if already logged in, redirect to /records/:username
+
+At /records:
+* after logout, go to /records/123, should redirect back to /login
+
+At /registration:
+* without entering anything, click Create admin account, show error messages
+* if the username has been used, show error message (todo)
+* enter username, password, and register, should go to /reg-success
+* after see registration success page, user can go to registration again 

@@ -1,0 +1,101 @@
+Pseudocode:
+
+
+
+Java FX side:
+=====
+
+
+
+show admin log in window
+enter user name and password
+click login
+	request the backend, if authenticated, 
+	show guest sign in sheet window
+	otherwise, show error message
+at Guest Sign In window
+enter name, email and phone
+when click on Finish Sign in
+send data to backend
+
+
+
+React side:
+==========
+
+
+
+Seeing sign in records:
+
+at http://localhost:3000/ show admin log in
+after login, show the sign in records for the admin
+
+Admin registration
+
+at http://localhost:3000 show registration form
+	show username and password field
+	
+register with username and password
+when click Register, send data to http://localhost:3001
+	if success, show Registratipon succeeed!
+	if fail, show Error
+
+
+
+
+Node side:
+========
+
+POST /api/user/login
+data: {
+	username,
+	password
+}
+validate username and password exists
+verify the password
+generate jwt token
+return userUUID, token and username
+
+
+POST /api/records/
+data: {
+	username,
+	name,
+	phone,
+	time
+}
+save to records table
+
+
+
+GET /api/records/:username (todo)
+verify token (todo)
+return an array of records for the username
+
+
+
+
+
+POST /api/user/registration
+data: {
+	username,
+	password
+}
+validate username and password are present
+check if the username already exists
+hash the password,
+store in Users table {
+	userUUID,
+	username,
+	passwordHash
+}
+return 200
+
+
+
+
+Deploy to cloud
+====
+
+
+at client side, add a new record, should be able to see it at https://online-sign-in-sheet.stevemu.com/records/:username

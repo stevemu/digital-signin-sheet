@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="SignInSheetController"
+            styleClass="root"
+>
+
+    <top>
+        <VBox>
+            <Label fx:id="title" text="Hello guest, please enter your information to sign in" />
+        </VBox>
+    </top>
+
+    <center>
+        <GridPane hgap="10" vgap="10">
+            <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Email"  GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="emailField"  GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Phone" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="phoneField"  GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+    </center>
+    <bottom>
+        <VBox alignment="CENTER" fx:id="bottom">
+            <Button fx:id="submit" text="Finish Signing In" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                    GridPane.columnSpan="2" onAction="#handleSubmit"
+            />
+            <Label fx:id="message" text="" />
+            <!--<Button fx:id="goBackButton" text="go back" GridPane.rowIndex="3" GridPane.columnIndex="0"-->
+                    <!--GridPane.columnSpan="2" onAction="#handleGoBack"-->
+            <!--/>-->
+        </VBox>
+
+    </bottom>
+
+    <stylesheets>
+        <URL value="@SignInSheet.css" />
+    </stylesheets>
+</BorderPane>
