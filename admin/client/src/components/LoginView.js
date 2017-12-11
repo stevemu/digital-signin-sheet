@@ -89,7 +89,7 @@ const RegistrationLink = styled(Link)`
     }
 `;
 
-class EnterID extends Component {
+export default class extends Component {
 
     static propTypes = {
         submitPress: PropTypes.func
@@ -146,5 +146,3 @@ class EnterID extends Component {
         );
     }
 }
-
-export default EnterID;
