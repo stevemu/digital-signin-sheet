@@ -39,6 +39,8 @@ At /login:
 
 At /records:
 * after logout, go to /records/, should redirect back to /login
+* if server returns an error, should show at /records
+* should show records in the database for the login user
 
 At /registration:
 * without entering anything, click Create admin account, show error messages
