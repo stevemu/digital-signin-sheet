@@ -4,13 +4,15 @@ import styled from 'styled-components';
 import moment from 'moment';
 
 const Container = styled.div`
+  padding-top: 20px;
   width: 100%;
   height: 100%;
   min-height: 100vh;
   background-color: #00201d;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const Title = styled.h1`
@@ -22,7 +24,6 @@ const TableContainer = styled.div`
   color: white;
 
 `;
-
 
 const Table = styled.table`
   

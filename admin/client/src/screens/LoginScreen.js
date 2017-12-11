@@ -40,7 +40,7 @@ export default class extends Component {
             //     <Redirect to={from} />
             // )
             return (
-                <Redirect to={`records/${this.props.loginUser.username}`} />
+                <Redirect to={`records/`} />
             )
         }
 

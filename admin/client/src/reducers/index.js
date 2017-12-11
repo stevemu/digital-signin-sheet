@@ -1,6 +1,6 @@
 // import { combineReducers } from 'redux';
 
-import records from "./recordReducer";
+import records from "./recordsReducer";
 import loginUser from "./loginUserReducer";
 import registration from "./registrationReducer";
 import app from "./appReducer";

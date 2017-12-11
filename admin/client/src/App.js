@@ -73,10 +73,13 @@ class App extends Component {
                             <Redirect to="/login" />
                         )
                     }}/>
+
                     <Route path="/login" component={LoginScreen}/>
+
                     <PrivateRoute authed={authed}
-                                  path="/records/:username"
+                                  path="/records/"
                                   component={RecordsScreen}/>
+
                     <Route path="/registration" component={RegistrationScreen}/>
 
                     {/*rehydrate then render RegSuccess, because this screen reset the regSuccess state to null*/}
