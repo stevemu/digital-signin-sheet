@@ -29,4 +29,5 @@ let rethinkdbConfig = {
 const SHEET_PORT = process.env.FOOD_PORT || 3001;
 const SHEET_JWT_SECRET = process.env.FOOD_JWT_SECRET || "awesomesheet";
 
+
 module.exports = { rethinkdbConfig, APP_CONSTANTS, SHEET_PORT, SHEET_JWT_SECRET };
