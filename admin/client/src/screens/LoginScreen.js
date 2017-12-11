@@ -9,7 +9,8 @@ import Login from '../components/LoginView';
 
 @connect((store) => {
     return {
-        loginUser: store.loginUser
+        loginUser: store.loginUser,
+        title: store.app.title
     }
 })
 export default class extends Component {
@@ -26,6 +27,10 @@ export default class extends Component {
             password: "",
             error: ""
         }
+    }
+
+    componentDidMount() {
+        document.title = this.props.title + " - Login";
     }
 
     render() {

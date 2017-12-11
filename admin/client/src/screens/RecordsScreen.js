@@ -10,7 +10,9 @@ import RecordsView from '../components/RecordsView';
     return {
         records: store.records,
         username: store.loginUser.username,
-        token: store.loginUser.token
+        token: store.loginUser.token,
+        title: store.app.title
+
     }
 })
 export default class extends Component {
@@ -24,6 +26,10 @@ export default class extends Component {
 
         const {username, token} = this.props;
         this.props.dispatch(getRecords(username, token));
+    }
+
+    componentDidMount() {
+        document.title = this.props.title + " - Records";
     }
 
     render() {

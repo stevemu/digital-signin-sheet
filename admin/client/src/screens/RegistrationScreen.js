@@ -11,7 +11,8 @@ import RegistrationView from '../components/RegistrationView';
 
 @connect((store) => {
     return {
-        registration: store.registration
+        registration: store.registration,
+        title: store.app.title
     }
 })
 export default class RegistrationScreen extends Component {
@@ -33,9 +34,13 @@ export default class RegistrationScreen extends Component {
         }
     }
 
+    componentDidMount() {
+        document.title = this.props.title + " - Registration";
+    }
+
     _validateUsername(username) {
         if (validateUsername(username)) {
-            this.setState({usernameError: "", username})
+            this.setState({usernameError: "", username});
             return true;
         } else {
             this.setState({usernameError: "Username must be 3 characters long.", username})

@@ -28,6 +28,7 @@ React side web app:
 
 * should look fine on mobile and desktop
 * should look fine on both Chrome and Firefox
+* At each page, the page title should be "Digital Signin Sheet - <page title>"
 
 At / 
 * redirect to /login
