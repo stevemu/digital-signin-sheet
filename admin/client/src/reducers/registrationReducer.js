@@ -37,7 +37,8 @@ export default (state = initState, action) => {
         case "SEE_REG_SUCCESS_PAGE_SUCCESS": {
             state = {
                 ...state,
-                regSuccess: false
+                regSuccess: false,
+                error: null
             }
         }
     }

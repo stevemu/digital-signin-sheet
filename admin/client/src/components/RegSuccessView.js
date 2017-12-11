@@ -20,6 +20,15 @@ const Title = styled.div`
   padding: 0 30px;
 `;
 
+const Login = styled.a`
+  color: #007770;
+  &link, &:hover {
+    color: #00201d;
+    cursor: pointer;
+  }
+`;
+
+
 export default class RegSuccess extends Component {
 
     static propTypes = {
@@ -36,7 +45,9 @@ export default class RegSuccess extends Component {
     render() {
         return (
             <Container>
-                <Title>You have successfully registered an account. Please <a onClick={this.props.loginPressed}>login</a>.</Title>
+                <Title>You have successfully registered an account.
+                    Please <Login onClick={this.props.loginPressed}>login</Login>.
+                </Title>
             </Container>
         );
     }
