@@ -13,13 +13,15 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 `;
 
 const LoginBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  width: 100%;
 `;
 
 const Title = styled.h1`
@@ -27,20 +29,37 @@ const Title = styled.h1`
   text-align: center;
   font-size: 36px;
   margin-bottom: 10px;
+  line-height: 1.4em;
 `;
 
 const SubTitle = styled.div`
    margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   line-height: 1.4em;
+   
+   @media (min-width: 570px) {
+    flex-direction: row;
+   }
 `;
 
 const CredentialBox = styled.div`
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
   box-sizing: border-box;
-  padding: 20px;
+  width: 100%;
+  padding:40px;
+  border-radius: 20px;
+
+  
+   @media (min-width: 570px) {
+    width: 400px;
+   }
 `;
 
 const Input = styled.input`
@@ -48,6 +67,11 @@ const Input = styled.input`
   height: 46px;
   text-align: center;
   margin-bottom: 20px;
+  width: 100%;
+  
+  &::placeholder {
+    color: rgba(0,0,0,.3);
+  }
 `;
 
 const Icon = styled(HouseIcon)`
@@ -64,6 +88,8 @@ const Submit = styled.a`
   text-align: center;
   background-color: #00ACA4;
   color: white;
+  padding: 10px;
+  border-radius: 10px;
   
   &:hover, &:link {
     text-decoration: none;
@@ -114,16 +140,19 @@ export default class extends Component {
                         <span>Log-in to your account to see your guests' records</span>
                     </SubTitle>
                     <CredentialBox>
+
                         <Input
                             type="text"
                             placeholder="username"
                             onChange={this.props.onUsernameChange}
                         />
+
                         <Input
                             type="password"
                             placeholder="password"
                             onChange={this.props.onPasswordChange}
                         />
+
                         {this.props.error &&
                         <Error>
                             {this.props.error}
@@ -136,9 +165,7 @@ export default class extends Component {
 
                     </CredentialBox>
 
-
                     <RegistrationLink to="/registration">Register</RegistrationLink>
-
 
                 </LoginBox>
 

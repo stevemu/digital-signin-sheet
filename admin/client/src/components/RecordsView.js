@@ -4,31 +4,43 @@ import styled from 'styled-components';
 import moment from 'moment';
 
 const Container = styled.div`
-  padding-top: 20px;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   background-color: #00201d;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
 `;
 
 const Title = styled.h1`
   font-size: 55px;
-  margin-bottom: 10px;
+  line-height: 1.4em;
+  margin-bottom: 30px;
 `;
 
 const TableContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
-
+  width: 100%;
+  
+  @media(min-width: 680px) {
+    align-items: flex-start;
+    width: 500px;
+  }
 `;
 
 const Table = styled.table`
   
+  width: 100%;
   & th {
-    padding: 5px;    
+    padding: 5px;  
+    text-align: left;  
   }
   
   & th.info {
@@ -58,6 +70,13 @@ const NavBar = styled.div`
   padding: 20px;
   justify-content: space-around;
   font-size: 26px;
+`;
+
+const Logout = styled.a`
+  &:hover {
+    color: #00201d;
+    cursor: pointer;
+  }
 `;
 
 export default class extends Component {
@@ -99,7 +118,7 @@ export default class extends Component {
             <div>
                 <NavBar>
                     Hello, {this.props.username}!
-                    <a onClick={this.props.onLogout}>Logout</a>
+                    <Logout onClick={this.props.onLogout}>Logout</Logout>
                 </NavBar>
                 <Container>
                     <TableContainer>

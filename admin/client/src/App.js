@@ -6,13 +6,22 @@ import {
     Redirect
 } from 'react-router-dom'
 import {connect} from 'react-redux';
-import axios from 'axios';
+import WebFont from 'webfontloader';
+import styled from 'styled-components';
 
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import RecordsScreen from './screens/RecordsScreen';
 import RegistrationScreen from './screens/RegistrationScreen';
 import RegSuccessScreen from './screens/RegSuccessScreen';
+
+
+WebFont.load({
+    google: {
+        families: ['Droid Sans', 'Droid Serif']
+    }
+});
+
 
 const PrivateRoute = ({authed, component: Component, ...rest}) => {
     return (
@@ -51,6 +60,10 @@ const HydrateRoute = ({hydrated, component: Component, ...rest}) => {
     )
 };
 
+const AppContainer = styled.div`
+  font-family: "Droid Sans"
+`;
+
 @connect(store => {
     return {
         authed: store.loginUser.authenticated,
@@ -67,7 +80,7 @@ class App extends Component {
 
         return (
             <Router>
-                <div>
+                <AppContainer>
                     <Route exact path="/" render={(props)=> {
                         return (
                             <Redirect to="/login" />
@@ -85,7 +98,7 @@ class App extends Component {
                     {/*rehydrate then render RegSuccess, because this screen reset the regSuccess state to null*/}
                     <HydrateRoute hydrated={hydrated} path="/reg-success" component={RegSuccessScreen}/>
 
-                </div>
+                </AppContainer>
             </Router>
         );
     }
