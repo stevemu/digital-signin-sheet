@@ -1,6 +1,0 @@
-registration
-	create admin account button:
-		validate (username not empty, password and confirm password not empty)
-		if passed, go to reg success
-		if not, show error message
-			"username cannot be empty"
