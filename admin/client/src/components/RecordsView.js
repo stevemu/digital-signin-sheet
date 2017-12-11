@@ -114,6 +114,13 @@ export default class extends Component {
     }
 
     render() {
+
+        if (this.props.error) {
+            return (
+                <div>Error: {this.props.error}</div>
+            )
+        }
+
         return (
             <div>
                 <NavBar>

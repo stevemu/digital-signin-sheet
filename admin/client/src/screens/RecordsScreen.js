@@ -8,7 +8,7 @@ import RecordsView from '../components/RecordsView';
 
 @connect((store) => {
     return {
-        records: store.records.records,
+        records: store.records,
         username: store.loginUser.username,
         token: store.loginUser.token
     }
@@ -29,12 +29,13 @@ export default class extends Component {
     render() {
         // console.log(this.props.records);
         
-        const filtered = this.props.records.filter((record) => {
+        const filtered = this.props.records.records.filter((record) => {
           return record.username === this.props.username;
         });
 
         return (
             <RecordsView
+                error={this.props.records.recordFetchError}
                 username={this.props.username}
                 records={filtered}
                 onLogout={() => {

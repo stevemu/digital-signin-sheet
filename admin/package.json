@@ -1,4 +1,3 @@
-
 {
   "name": "online-sign-in-sheet",
   "version": "1.0.0",
@@ -28,6 +27,7 @@
     "moment": "^2.19.1",
     "nodemon": "^1.12.1",
     "rethinkdb": "^2.3.3",
-    "rethinkdbdash": "^2.3.31"
+    "rethinkdbdash": "^2.3.31",
+    "webfontloader": "^1.6.28"
   }
 }

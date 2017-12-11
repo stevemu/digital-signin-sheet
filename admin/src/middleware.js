@@ -19,7 +19,7 @@ function createConnection(req, res, next) {
 // handle Error on rethinkdb connection
 function handleError(res) {
     return function(error) {
-        res.send(500, {error: error.message});
+        res.status(500).send({error: error.message});
     }
 }
 
