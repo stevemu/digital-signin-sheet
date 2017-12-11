@@ -19,12 +19,15 @@ at guest sign-in sheet:
 * enter name, email and phone, click on Finish Signing In, 
 	the success message is shown for 2 seconds
 	record show up in the database
-	record show up in /records/:username
+	record show up in /records/
 
 
 
 React side web app:
 =========
+
+* should look fine on mobile and desktop
+* should look fine on both Chrome and Firefox
 
 At / 
 * redirect to /login
@@ -32,10 +35,10 @@ At /
 At /login:
 * enter 123 and 12345, works
 * enter a and b, show error messages
-* if already logged in, redirect to /records/:username
+* if already logged in, redirect to /records/
 
 At /records:
-* after logout, go to /records/123, should redirect back to /login
+* after logout, go to /records/, should redirect back to /login
 
 At /registration:
 * without entering anything, click Create admin account, show error messages
