@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
-    "custom-react-scripts": "0.2.1",
+    "custom-react-scripts": "^0.2.1",
     "moment": "^2.19.3",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
@@ -15,7 +15,8 @@
     "redux": "^3.7.2",
     "redux-persist": "^5.4.0",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^2.2.4"
+    "styled-components": "^2.2.4",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
